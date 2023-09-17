@@ -61,3 +61,30 @@ E mande o App usa-lo:
     npm install eslint -D
     npx eslint --init
 Apos a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na linha 9, troque `"plugin:vue/vue3-essential"` por `"plugin:vue/vue3-recommended"`
+
+![image](https://github.com/IgorRSousa/Aula_Vue/assets/106490786/fd12b78a-5b8d-42f9-8aa5-36ad6154d9d5)
+
+### TailWindCss
+
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+Um arquivo `tailwind.config.js`será criado na raiz do projeto nele coloque o seguinte codigo: 
+
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      content: [
+        "./index.html",
+        "./src/**/*.{vue,js,ts,jsx,tsx}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
+Em `src/style.css` Apague tudo e cole: 
+    
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
