@@ -25,7 +25,7 @@ Estrutura de pasta Criada:
 
 ### Instalando e configurando os pacotes necessários
 
-#### Vue-Router
+### Vue-Router
 
     npm install vue-router
 
