@@ -88,3 +88,24 @@ Em `src/style.css` Apague tudo e cole:
     @tailwind components;
     @tailwind utilities;
 
+### Flow bite
+
+    npm install flowbite
+
+Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**/*.js"` no content do `TailWindCss`, vai ficar assim:
+    
+    /** @type {import('tailwindcss').Config} */
+    export default {
+      content: [
+        "./index.html",
+        "./src/**/*.{vue,js,ts,jsx,tsx}",
+        "./node_modules/flowbite/**/*.js",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [
+        require('flowbite/plugin'),
+      ],
+      darkMode: 'class',
+    }
