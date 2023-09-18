@@ -31,7 +31,7 @@ Estrutura de pasta Criada:
 
 Agora dentro de `src` crie uma pasta routes: `/src/routes`, e dentro dela cria um arquivo `index.js`.
 
-No `/src/routes/index.js` cole o seguinte codigo:
+No `/src/routes/index.js` cole o seguinte código:
 
     import { createRouter, createWebHistory } from 'vue-router'
 
@@ -52,7 +52,7 @@ Agora no `src/main.js` import as rotas:
 
     import router from './routes'
 
-E mande o App usa-lo:
+E mande o App usá-lo:
 
     createApp(App).use(router).mount('#app')
 
@@ -60,7 +60,7 @@ E mande o App usa-lo:
 
     npm install eslint -D
     npx eslint --init
-Apos a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na linha 9, troque `"plugin:vue/vue3-essential"` por `"plugin:vue/vue3-recommended"`
+Após a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na linha 9, troque `"plugin:vue/vue3-essential"` por `"plugin:vue/vue3-recommended"`
 
 ![image](https://github.com/IgorRSousa/Aula_Vue/assets/106490786/fd12b78a-5b8d-42f9-8aa5-36ad6154d9d5)
 
@@ -69,7 +69,7 @@ Apos a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na 
     npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p
 
-Um arquivo `tailwind.config.js`será criado na raiz do projeto nele coloque o seguinte codigo: 
+Um arquivo `tailwind.config.js`será criado na raiz do projeto nele coloque o seguinte código: 
 
     /** @type {import('tailwindcss').Config} */
     export default {
@@ -109,3 +109,84 @@ Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**
       ],
       darkMode: 'class',
     }
+
+## Criando as telas e componentes
+
+Para começar vamos criar uma pasta `views` dentro de `src`
+
+![image](https://github.com/IgorRSousa/Aula_Vue/assets/106490786/0d545beb-b246-42b6-843e-00c5f9e9797d)
+
+E agora vamos limpar tudo que vem por padrão no Vue: 
+- `src/components/HelloWorld.vue`, Delete;
+- `src/App.vue` fica assim:
+
+        <script>
+        import { onMounted } from 'vue'
+        import { initFlowbite } from 'flowbite'
+        
+        // initialize components based on data attribute selectors
+        onMounted(() => {
+            initFlowbite();
+        })
+        
+        export default {
+          components: {}
+        }
+        </script>
+        
+        <template>
+          <RouterView />
+        </template>
+        
+        <style ></style>
+
+Certo vamos começas a criar as telas e Componentes
+
+Em `src/components/` crie `NavBar/index.vue` e cole: 
+
+    <script>
+    export default {
+        data() {
+            return {
+                navOn: "block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500",
+                navOff: "block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent",
+            }
+        },
+    }
+    </script>
+    
+    <template>
+        <nav class="bg-gray-600 border-gray-200 dark:bg-gray-900">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+                <a href="/" class="flex items-center">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold text-white whitespace-nowrap dark:text-white">Empresa</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button"
+                    class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul
+                        class="flex flex-col p-4 mt-4 font-medium bg-gray-600 border border-gray-600 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-600 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="/" :class="this.$route.path === '/' ? navOn : navOff">Home</a>
+                        </li>
+                        <li>
+                            <a href="cadastro" :class="this.$route.path === '/cadastro' ? navOn : navOff">Cadastro</a>
+                        </li>
+                        <li>
+                            <a href="listar" :class="this.$route.path === '/listar' ? navOn : navOff" >Listar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </template>
+    
+    <style></style>
