@@ -48,7 +48,7 @@ No `/src/routes/index.js` cole o seguinte código:
     
     export default router;
 
-Agora no `src/main.js` import as rotas:
+Agora no `src/main.js` importe as rotas:
 
     import router from './routes'
 
@@ -69,7 +69,7 @@ Após a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na
     npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p
 
-Um arquivo `tailwind.config.js`será criado na raiz do projeto nele coloque o seguinte código: 
+Um arquivo `tailwind.config.js` será criado na raiz do projeto nele coloque o seguinte código: 
 
     /** @type {import('tailwindcss').Config} */
     export default {
@@ -206,7 +206,7 @@ Em `src/components/` crie `NavBar/index.vue` e cole:
     
     <style></style>
 
-Com a Navbar criada basta inporta-la no `src/App.vue`, declara-la e chamar na tela, ficando assim:
+Com a Navbar criada basta importa-la no `src/App.vue`, declara-la e chamar na tela, ficando assim:
     
     <script>
     import navBar from './components/NavBar/index.vue'; // <-- Import
@@ -228,5 +228,3 @@ Com a Navbar criada basta inporta-la no `src/App.vue`, declara-la e chamar na te
     </template>
     
     <style ></style>
-
-
