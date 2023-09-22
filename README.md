@@ -88,7 +88,7 @@ Em `src/style.css` Apague tudo e cole:
     @tailwind components;
     @tailwind utilities;
 
-### Flow bite
+### Flowbite
 
     npm install flowbite
 
@@ -109,6 +109,12 @@ Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**
       ],
       darkMode: 'class',
     }
+
+### Extensões utilizadas no VSCode
+
+- Vue VSCode Snippets
+- Vue Language Features
+- Tailwind CSS Extension Pack
 
 ## Criando as telas e componentes
 
