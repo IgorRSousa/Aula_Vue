@@ -205,3 +205,28 @@ Em `src/components/` crie `NavBar/index.vue` e cole:
     </template>
     
     <style></style>
+
+Com a Navbar criada basta inporta-la no `src/App.vue`, declara-la e chamar na tela, ficando assim:
+    
+    <script>
+    import navBar from './components/NavBar/index.vue'; // <-- Import
+    import { onMounted } from 'vue'
+    import { initFlowbite } from 'flowbite'
+    
+    onMounted(() => {
+      initFlowbite();
+    })
+    
+    export default {
+      components: { navBar } // <-- Declare
+    }
+    </script>
+    
+    <template>
+      <navBar /> <!--Chame -->
+      <RouterView />
+    </template>
+    
+    <style ></style>
+
+
