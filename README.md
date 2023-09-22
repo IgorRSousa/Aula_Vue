@@ -110,6 +110,15 @@ Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**
       darkMode: 'class',
     }
 
+#### Obs.: Necessarios intaciar o plugin no arquivo `App.vue` do projeto. 
+      import { onMounted } from 'vue'
+      import { initFlowbite } from 'flowbite'
+      
+      // initialize components based on data attribute selectors
+      onMounted(() => {
+          initFlowbite();
+      })
+
 ### Extensões utilizadas no VSCode
 
 - Vue VSCode Snippets
