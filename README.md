@@ -326,4 +326,105 @@ CadastroUsuario.vue:
     
     <style></style>
 
+E agora o component de Listar, `Listar/ListarProduto.vue` e `Listar/ListarUsuarios.vue` e cole repectivamente:
+
+ListarProduto.vue: 
+
+    <script>
+    export default {
+        setup() {
+            return {}
+        }
+    }
+    </script>
+    
+    <template>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-auto w-[80%]">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-50 uppercase bg-[#4B5563] dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Nome Produto
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Preço
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Responsalvel
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Editar</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Apple MacBook Pro 17"
+                        </th>
+                        <td class="px-6 py-4">
+                            Silver
+                        </td>
+                        <td class="px-6 py-4">
+                            $2999
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a data-modal-target="defaultModal" data-modal-toggle="defaultModal" href="#" class="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                            <a href="#" class="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">Deletar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <style></style>
+
+ListarUsuarios.vue:
+
+    <template>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-auto w-[80%]">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-50 uppercase bg-[#4B5563] dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        E-mail
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Senha
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Editar</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">
+                        $2999
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <a href="#" class="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                        <a href="#" class="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">Deletar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </template>
+    
+    <script>
+    export default {
+        setup() {
+            return {}
+        }
+    }
+    </script>
+    
+    <style lang="scss" scoped></style>
+
+
 Agora na pasta `src/views` crie 3 arquivos: `Home.vue`, `Cadastro.vue` e `Listar.vue`
