@@ -60,6 +60,7 @@ E mande o App usá-lo:
 
     npm install eslint -D
     npx eslint --init
+    
 Após a instalação aparecera um arquivo `.eslintrc.cjs` na Raiz do projeto, na linha 9, troque `"plugin:vue/vue3-essential"` por `"plugin:vue/vue3-recommended"`
 
 ![image](https://github.com/IgorRSousa/Aula_Vue/assets/106490786/fd12b78a-5b8d-42f9-8aa5-36ad6154d9d5)
@@ -99,13 +100,13 @@ Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**
       content: [
         "./index.html",
         "./src/**/*.{vue,js,ts,jsx,tsx}",
-        "./node_modules/flowbite/**/*.js",
+        "./node_modules/flowbite/**/*.js", // <--
       ],
       theme: {
         extend: {},
       },
       plugins: [
-        require('flowbite/plugin'),
+        require('flowbite/plugin'), // <--
       ],
       darkMode: 'class',
     }
@@ -118,6 +119,23 @@ Adicione `require('flowbite/plugin')` nos plugins e `"./node_modules/flowbite/**
       onMounted(() => {
           initFlowbite();
       })
+
+### Axios
+
+    npm install --save axios vue-axios
+
+Faça o Import das bibliotecas no arquivo `src/main.js`: 
+
+    import { createApp } from 'vue'
+    import './style.css'
+    import App from './App.vue'
+    import router from './routes'
+    import * as Vue from 'vue' // <--
+    import axios from 'axios' // <--
+    import VueAxios from 'vue-axios' // <--
+    
+    createApp(App).use(router).use(VueAxios, axios).mount('#app') // <--
+
 
 ### Extensões utilizadas no VSCode
 
