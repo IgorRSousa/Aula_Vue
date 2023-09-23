@@ -143,7 +143,7 @@ Faça o Import das bibliotecas no arquivo `src/main.js`:
 - Vue Language Features
 - Tailwind CSS Extension Pack
 
-## Criando as telas e componentes
+## Criando as telas e componentes sem Logica
 
 Para começar vamos criar uma pasta `views` dentro de `src`
 
@@ -173,7 +173,7 @@ E agora vamos limpar tudo que vem por padrão no Vue:
         
         <style ></style>
 
-Certo vamos começas a criar as telas e Componentes
+#### Certo vamos começas a criar os Componentes
 
 Em `src/components/` crie `NavBar/index.vue` e cole: 
 
@@ -246,3 +246,84 @@ Com a Navbar criada basta importa-la no `src/App.vue`, declara-la e chamar na te
     </template>
     
     <style ></style>
+
+Ainda em `src/components/` crie `Cadastro/CadastroProduto.vue` e `Cadastro/CadastroUsuario.vue` e cole repectivamente: 
+
+CadastroProduto.vue:
+
+    <script>
+
+    export default {
+        
+    }
+    </script>
+    
+    <template>
+        <div class="mx-auto w-[80%] mt-10">
+            <form>
+                <div class="mb-6">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
+                    <input type="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="name@gmail.com" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Produto</label>
+                    <input type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Maquina de Lavar ..." required>
+                </div>
+                <div class="mb-6">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Preço</label>
+                    <input type="number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="120.00" required>
+                </div>
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar</button>
+            </form>
+        </div>
+    </template>
+    
+    <style></style>
+
+CadastroUsuario.vue:
+
+    <template>
+    <div class="mx-auto w-[80%] mt-10">
+        <form>
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
+                <input type="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name@gmail.com" required>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900">Senha</label>
+                <input type="password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="123456" required>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confimar Senha</label>
+                <input type="password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    placeholder="123456" required>
+            </div>
+            <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar</button>
+        </form>
+    </div>
+    </template>
+    
+    <script>
+    export default {
+        setup() {
+            return {}
+        }
+    }
+    </script>
+    
+    <style></style>
+
+Agora na pasta `src/views` crie 3 arquivos: `Home.vue`, `Cadastro.vue` e `Listar.vue`
