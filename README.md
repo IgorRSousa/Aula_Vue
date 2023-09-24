@@ -569,7 +569,6 @@ No arquivo `src/routes/index.js` crie as rotas para as telas:
             async Consultar() {
                 const dados = await axios.get('http://localhost:8080/product')
                 this.listaProdutos = dados.data.content
-                console.log(this.listaProdutos)
             },
     
             setEdit(produto, preco, email, id) {
